@@ -1,40 +1,36 @@
-![Take - Problema: Correios de San Andreas](https://i.imgur.com/ojkUyf9.png)
-
-
-
 # TakeTest
-Esta é uma solução para uma atividade de nivelamento técnico da empresa Take.net.
+This is a solution for technical leveling by Take.net company.
 
-Desenvolvido em [dotnet](https://github.com/dotnet/sdk/) `v3.1.103`.
+Developed in [dotnet](https://github.com/dotnet/sdk/) `v3.1.103`.
 
 
 
-## Solução Implementada
+## Implementation
 
-Após a leitura do problema (Correios de San Andreas) e a compreensão de que se tratava de uma tarefa para calcular a menor rota entre pontos (cidades de San Andreas), decidi por utilizar grafo orientado (ou grafo dirigdo, ou grafo direcionado) juntamente com o algorítmo de Dijkstra para encontrar o menor caminho entre dois ponto.
+After reading the problem (San Andreas Post Office) and realizing this is a task to calculate the minimum route between points (San Andreas cities), I decided to use Oriented Graph with Dijkstra algorithm to find the shortest path between two points.
 
 ![Grafo da solução](https://i.imgur.com/YM3IVEd.png)
 
-Dividi a solução em 3 partes:
+I divided the solution into 3 parts:
 
-1. **Library**: é a biblioteca do sistema, onde se encontram as classes para a solução da atividade.
-2. **Application**: é a interface com o usuário, onde é feita a importação dos arquivos de trechos e encomendas e a exportação do arquivo de rotas.
-3. **Tests**: responsável por realizar todos os testes da biblioteca da solução.
+1. **Library**: is the system library, where we find the classes for the task's solution.
+2. **Application**: is the interface with the user, where is made the path's file import and the route's file export..
+3. **Tests**: responsible for all solution's library tests.
 
 
 
-## Instalação
+## Installation
 
-**Utilizando o console:**
+**Console:**
 
-Clone o repositório e faça um restore:
+Clone the repository and restore:
 
 ```shell
 $ git clone ...
 $ dotnet restore
 ```
 
-Faça uma publicação da aplicação:
+Publish the application:
 
 ```shell
 $ cd TakeTest.Application
@@ -43,13 +39,13 @@ $ dotnet publish -c Release
 
 
 
-## Utilização
+## Using
 
-Disponibilizei, na pasta `Resources` do projeto `TakeTest.Application`, dois arquivos para o teste da aplicação: `paths.txt` contendo os trechos entre cidades e `shipments.txt` contendo as encomendas.
+I made available, at `TakeTest.Application` project `Resources` folder, two files to test the whole application: `paths.txt` with paths between cities and `shipments.txt` with shipments.
 
-A aplicação publicada estará na pasta `bin\Release\netcoreapp3.1\`.
+The published application can be found at `bin\Release\netcoreapp3.1\`.
 
-Para rodar a aplicação:
+Running the application:
 
 ### Windows
 
@@ -59,17 +55,17 @@ Para rodar a aplicação:
 
 `$ ./TakeTest.Application paths.txt shipments.txt output.txt`
 
-### Comportamentos (output)
+### Expected output
 
-* Caso alguma linha do arquivo de encomendas contenha alguma cidade que não foi informada no arquivo de trechos, a saída para aquela linha (encomenda) será `ERROR: UNKNOWN [CITY_NAME]`, onde `[CITY_NAME]`  é a cidade informada incorretamente.
-* Caso aconteça algum erro inesperado para o cálculo de uma rota de uma encomenda, a saída será `ERROR: INVALID REQUEST`.
-* Caso a encomenda seja para uma rota inalcançável, a saída será uma constante chamada `UNREACHABLE` que, no código fonte, tem o valor de `-1`.
+* In case some shipment's file line contains any city not informed in the path's file, the expected output for this line will be `ERROR: UNKNOWN [CITY_NAME]`, where`[CITY_NAME]`  is the incorrectly informed city.
+* In case some unexpected error occurred in some route calculation, the expected output will be `ERROR: INVALID REQUEST`.
+* In case the shipment is for an incalculable route, the expected output will be a constant called `UNREACHABLE` that, in the source code, has the `-1` value.
 
 
 
-## Testes
+## Tests
 
-Para rodar os testes do sistema:
+Running the application tests:
 
 ```shell
 $ cd TakeTest.Tests
@@ -78,15 +74,7 @@ $ dotnet test
 
 
 
-## Considerações
-
-* Caso tivesse um pouco mais de tempo para a execução da tarefa, Iria melhorar o tratamento da entrada de dados;
-* Achei o exercício interessante e prazeroso de ser solucionado;
-* Gostei do uso das cidades da franquia de GTA!
-
-
-
-## Referências
+## References
 
 * [Wikipedia: Dijkstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra's_algorithm)
 
